@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-todolist</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div>
+                <div v-for="(activitie, i) in activities" class="cella" :class="{ rewrite: (activities[i].done==false)}  ">{{activities[i].text}}</div>
+            </div> 
+            <div>
+                <button v-for="(activitie, i) in activities" :value=i @click="cancella(i)" class="x">X </button>
+            </div>
+        </div>
+        <div>
+            <input type="text" id="text">
+            <select name="fatto?" id="Isdone">
+                <option value=true>si</option>
+                <option value=false>no</option>
+            </select>
+            <button id="add" @click="add()">aggiungi</button>
+        </div>
+<!--         text : "${document.getElementById("text").value}",
+        done : ${document.getElementById("Isdone").value}, -->
+
+
+    </div>
+    <script src="./java/main.js"></script>
+</body>
+</html>
