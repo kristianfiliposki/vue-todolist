@@ -28,6 +28,10 @@ const opzioni = {
                 document.getElementsByClassName("cella")[index].classList.add("delete");
                 document.getElementsByClassName("x")[index].classList.add("delete");
         },
+        rewrite(index){
+            console.log(this.activities[index].done);
+            this.activities[index].done=(!(this.activities[index].done))
+        },
         add(){
             let text=document.getElementById("text").value;
             let Isdone=document.getElementById("Isdone").value;

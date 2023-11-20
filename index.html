@@ -11,7 +11,7 @@
     <div id="app">
         <div class="container">
             <div>
-                <div v-for="(activitie, i) in activities" class="cella" :class="{ rewrite: (activities[i].done==false)}  ">{{activities[i].text}}</div>
+                <div v-for="(activitie, i) in activities" class="cella" :class="{ rewrite: (activities[i].done==true)}" @click="rewrite(i)">{{activities[i].text}}</div>
             </div> 
             <div>
                 <button v-for="(activitie, i) in activities" :value=i @click="cancella(i)" class="x">X </button>
@@ -20,8 +20,8 @@
         <div>
             <input type="text" id="text">
             <select name="fatto?" id="Isdone">
-                <option value=true>si</option>
-                <option value=false>no</option>
+                <option value=true>Attivita fatta</option>
+                <option value=false>Non completata</option>
             </select>
             <button id="add" @click="add()">aggiungi</button>
         </div>
